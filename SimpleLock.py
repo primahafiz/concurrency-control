@@ -136,6 +136,7 @@ class SimpleLock:
                         print(f'Cannot execute transaction {newTransaction[3]} with ID {newTransaction[1]}, put transaction into queue')
                         self.queue.append(self.listTransaction[0].copy())
                     else:
+                        print(newTransaction[3],newTransaction[1],newTransaction[2])
                         print(f'Executing transaction ABORT with ID {newTransaction[1]}')
                         self.releaseLock(newTransaction[1])
                         notDeadlock = True
@@ -144,6 +145,7 @@ class SimpleLock:
                         print(f'Cannot execute transaction {newTransaction[3]} with ID {newTransaction[1]}, put transaction into queue')
                         self.queue.append(self.listTransaction[0].copy())
                     else:
+                        print(newTransaction[3],newTransaction[1],newTransaction[2])
                         print(f'Executing transaction COMMIT with ID {newTransaction[1]}')
                         self.releaseLock(newTransaction[1])
                         notDeadlock = True
